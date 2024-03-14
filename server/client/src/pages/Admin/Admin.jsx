@@ -2,11 +2,15 @@ import React, { useEffect } from "react";
 import CustomTable from "../../components/CustomTable/CustomTable";
 import { useDispatch, useSelector } from "react-redux";
 import { useQuery } from "@tanstack/react-query";
-import { setAllProducts, setEditedItem, setNewItem } from "../../store/slices/productSlice";
+import {
+  setAllProducts,
+  setEditedItem,
+  setNewItem,
+} from "../../store/slices/productSlice";
 import { Nav } from "../../components/Nav/Nav";
-import AddIcon from '@mui/icons-material/Add';
+import AddIcon from "@mui/icons-material/Add";
 import CustomModal from "../../components/CustomModal/CustomModal";
-import './Admin.css'
+import "./Admin.css";
 export const Admin = () => {
   const allProducts = useSelector((state) => state.products.products);
   const dispatch = useDispatch();
@@ -15,6 +19,7 @@ export const Admin = () => {
     queryKey: ["repoData"],
     queryFn: async () => {
       try {
+        //const response = await fetch("http://localhost:3000");
         const response = await fetch("https://store-wujf.onrender.com/getAll");
         const data = await response.json();
         dispatch(setAllProducts(data));
@@ -35,8 +40,8 @@ export const Admin = () => {
 
   const handleDelete = async (itemID) => {
     try {
-      const response = await fetch(
-        `http://localhost:3000/deleteItem/${itemID}`,
+      //const response = await fetch(`http://localhost:3000/deleteItem/${itemID}`,
+      const response = await fetch(`https://store-wujf.onrender.com//deleteItem/${itemID}`,
         {
           method: "DELETE",
           headers: {
@@ -60,8 +65,8 @@ export const Admin = () => {
 
   const handleEdit = async (formData, itemID) => {
     try {
-      const response = await fetch(
-        `http://localhost:3000/updateItem/${itemID}`,
+      //const response = await fetch(`http://localhost:3000/updateItem/${itemID}`,
+      const response = await fetch(`https://store-wujf.onrender.com/updateItem/${itemID}`,
         {
           method: "PUT",
           headers: {
@@ -87,31 +92,31 @@ export const Admin = () => {
   };
 
   const handleNewProduct = async (formData) => {
-
     try {
-      const response = await fetch('http://localhost:3000/AddProduct', {
-        method: 'POST',
+      //const response = await fetch("http://localhost:3000/AddProduct", 
+      const response = await fetch("https://store-wujf.onrender.com/AddProduct", 
+      {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
           // Add any other headers if required
         },
         body: JSON.stringify(formData),
       });
-  
+
       if (!response.ok) {
-        throw new Error('Failed to add new product');
+        throw new Error("Failed to add new product");
       }
-  
+
       const data = await response.json();
       // Handle the response data as needed
-      dispatch(setNewItem(data))
-      console.log('New product added:', data);
+      dispatch(setNewItem(data));
+      console.log("New product added:", data);
     } catch (error) {
       // Handle any errors that occur during the request
-      console.error('Error adding new product:', error.message);
+      console.error("Error adding new product:", error.message);
     }
   };
-  
 
   return (
     <>

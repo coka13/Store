@@ -20,7 +20,9 @@ const Login = () => {
     event.preventDefault();
     try {
       // Send login request to the server (replace with your actual API endpoint)
-      const response = await fetch("http://localhost:3000/login", {
+      //const response = await fetch("http://localhost:3000/login", 
+      const response = await fetch("https://store-wujf.onrender.com/login",
+      {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

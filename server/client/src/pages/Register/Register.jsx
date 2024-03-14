@@ -24,7 +24,9 @@ const handleFormSubmit = (event) => {
 const handleNewUser = async (formData) => {
   console.log(formData)
   try {
-    const response = await fetch('http://localhost:3000/addUser', {
+    //const response = await fetch('http://localhost:3000/addUser', 
+    const response = await fetch('https://store-wujf.onrender.com/addUser', 
+    {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
