@@ -24,6 +24,7 @@ const HomePage = () => {
     queryFn: async () => {
       try {
         const response = await fetch("https://store-wujf.onrender.com:3000/getAll");
+        //const response = await fetch("http://localhost:3000/getAll");
         const data = await response.json();
         dispatch(setAllProducts(data));
         dispatch(

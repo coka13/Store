@@ -240,7 +240,7 @@ app.get("*", (req, res) => {
 //Connect to DB
 app.listen(port, async () => {
   try {
-    await mongoose.connect(`mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@${DB_CLUSTER}/${DB_NAME}`);
+    await mongoose.connect(`mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@${DB_CLUSTER}/${DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`);
     console.log(`App listening on port ${port}`);
   } catch (e) {
     console.log(e);
