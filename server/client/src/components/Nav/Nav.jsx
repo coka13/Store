@@ -25,7 +25,7 @@ export const Nav = ({ children }) => {
       <CustomDrawer className="drawer" label={''} icon={ShoppingCartIcon}/>
 
       <div className="logo">
-        <img src="../../../public/logo.png" alt="Logo" onClick={() => window.location.href = "/"} />
+        <img src="server\client\public\logo.png" alt="Logo" onClick={() => window.location.href = "/"} />
       </div>
       {children}
       

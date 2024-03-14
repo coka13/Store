@@ -15,7 +15,7 @@ export const Admin = () => {
     queryKey: ["repoData"],
     queryFn: async () => {
       try {
-        const response = await fetch("http://localhost:3000");
+        const response = await fetch("https://store-wujf.onrender.com/getAll");
         const data = await response.json();
         dispatch(setAllProducts(data));
         return data;
