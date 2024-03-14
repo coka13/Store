@@ -2,8 +2,11 @@ import express, { response } from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import { DB_CLUSTER, DB_NAME, DB_PASSWORD, DB_USERNAME, port } from "./config/config.js";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 
-
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 
