@@ -23,7 +23,7 @@ const HomePage = () => {
     queryKey: ["repoData"],
     queryFn: async () => {
       try {
-        const response = await fetch("https://store-wujf.onrender.com:3000/Store");
+        const response = await fetch("https://store-wujf.onrender.com:3000/");
         const data = await response.json();
         dispatch(setAllProducts(data));
         dispatch(
