@@ -34,7 +34,7 @@ app.use(cors());
 
 //PRODUCTS
 //Get all products
-app.get("/", async (req, res) => {
+app.get("/getAll", async (req, res) => {
   try {
     const allProducts = await Products.find({});
     if (allProducts.length === 0 || !allProducts) {
