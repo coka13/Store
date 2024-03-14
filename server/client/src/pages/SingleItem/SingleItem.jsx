@@ -10,7 +10,7 @@ const SingleItem = () => {
       queryKey: ["single product"],
       queryFn: async () => {
         //const response = await fetch(`http://localhost:3000/items/${itemID}`);
-        const response = await fetch(`http://localhost:3000/items/${itemID}`);
+        const response = await fetch(`https://store-wujf.onrender.com/items/${itemID}`);
         const data = await response.json();
         console.log(data)
         return data
