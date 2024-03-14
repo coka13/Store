@@ -26,7 +26,7 @@ export const Users = mongoose.model("Users", userSchema);
 
 
 app.use(express.json());
-
+app.use(express.static("client/dist"));
 app.use(cors());
 
 //PRODUCTS
@@ -228,6 +228,10 @@ app.post("/login",async(req,res)=>{
 })
 
 
+app.get("*", (req, res) => {
+  console.log(__dirname);
+  res.sendFile(__dirname + "/client/dist/index.html");
+});
 
 
 //Connect to DB
