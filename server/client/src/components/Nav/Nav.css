@@ -1,0 +1,17 @@
+.product-filter {
+    display: flex;
+    padding: 30px 0;
+
+  }
+
+
+.drawer{
+  position: fixed;
+  left: 100px;
+
+}
+
+.login-register{
+  display: flex;
+  justify-content: end;
+}

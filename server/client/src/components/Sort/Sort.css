@@ -1,0 +1,31 @@
+.sort {
+    display: flex;
+    align-self: flex-end;
+    justify-content: space-between;
+    
+  }
+  
+  .collection-sort {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .collection-sort:first-child {
+    padding-right: 20px;
+  }
+
+  label {
+    color: #666;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 2em;
+    text-transform: uppercase;
+  }
+
+  .rangePrice{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
